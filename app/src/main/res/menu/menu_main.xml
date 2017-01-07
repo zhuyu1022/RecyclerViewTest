@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/verlistviewMenu"
+        android:title="垂直ListView"/>
+    <item android:id="@+id/horlistviewMenu"
+        android:title="水平ListView"/>
+    <item android:id="@+id/verGridViewMenu"
+        android:title="垂直GridView"/>
+    <item android:id="@+id/horGridViewMenu"
+        android:title="水平GridView"/>
+</menu>

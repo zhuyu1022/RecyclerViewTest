@@ -2,8 +2,12 @@ package com.example.zhuyu.recyclerviewtest;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Switch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,13 +20,49 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView= (RecyclerView) findViewById(R.id.recyclerView);
-        initlist();
+        initlist();//初始化水果数据
         FruitAdapter adapter=new FruitAdapter(fruitList);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);//设置适配器
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));//设置RecyclerView的默认布局方式
+
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.verlistviewMenu:
+                //设置垂直滚动
+                recyclerView.setLayoutManager(new LinearLayoutManager(this));
+                break;
+            case R.id.horlistviewMenu:
+                //设置为水平滚动，第三个参数为是否反向排列滚动
+                recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+                break;
+            case R.id.verGridViewMenu:
+                //设置为网格布局垂直滚动，3列，不反向排列
+                recyclerView.setLayoutManager(new GridLayoutManager(this,3,GridLayoutManager.VERTICAL,false));
+                break;
+            case R.id.horGridViewMenu:
+                //设置为网格布局水平滚动，5行，不反向排列
+                recyclerView.setLayoutManager(new GridLayoutManager(this,5,GridLayoutManager.HORIZONTAL,false));
+                break;
+        }
+
+
+
+        return super.onOptionsItemSelected(item);
+
+    }
+
     private void initlist(){
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             Fruit apple = new Fruit("apple", R.drawable.apple_pic);
             fruitList.add(apple);
             Fruit banana = new Fruit("banana", R.drawable.banana_pic);
