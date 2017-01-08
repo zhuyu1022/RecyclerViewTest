@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/removeMenu"
+        android:title="remove"
+        android:showAsAction="always"
+        android:icon="@drawable/ic_menu_delete"
+        />
+    <item android:id="@+id/addMenu"
+        android:title="add"
+        android:showAsAction="always"
+        android:icon="@drawable/ic_menu_add"
+        />
+
     <item android:id="@+id/verlistviewMenu"
-        android:title="垂直ListView"/>
+        android:title="垂直ListView"
+        />
     <item android:id="@+id/horlistviewMenu"
-        android:title="水平ListView"/>
+        android:title="水平ListView"
+        />
     <item android:id="@+id/verGridViewMenu"
-        android:title="垂直GridView"/>
+        android:title="垂直GridView"
+        />
     <item android:id="@+id/horGridViewMenu"
-        android:title="水平GridView"/>
+        android:title="水平GridView"
+        />
+    <item android:id="@+id/StaggeredGridViewMenu"
+        android:title="瀑布流StaggeredView"
+        />
 </menu>

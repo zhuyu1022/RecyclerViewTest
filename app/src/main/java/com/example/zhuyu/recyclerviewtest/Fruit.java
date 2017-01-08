@@ -1,7 +1,7 @@
 package com.example.zhuyu.recyclerviewtest;
 
 /**
- * Created by Administrator on 2017/1/7 0007.
+ * Created by zhuyu on 2017/1/7 0007.
  */
 
 public class Fruit {
